@@ -18,8 +18,8 @@ jobs:
     - name: Login to Azure Container Registry
       uses: azure/docker-login@v1
       with:
-        login-server: allsampledockerimages.azurecr.io
-        username: allsampledockerimages
+        login-server: ${{ secrets.REGISTRY_SOURCE }}
+        username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_TOKEN }}
 
     - name: Build and push Docker image
@@ -27,7 +27,7 @@ jobs:
       with:
         context: .
         # push: true
-        tags: 'allsampledockerimages.azurecr.io/${{ secrets.REGISTRY_USERNAME }}/strapi-distorless-azure:${{ github.run_number }}'
+        tags: '${{ secrets.REGISTRY_SOURCE }}/${{ secrets.REGISTRY_USERNAME }}/strapi-distorless-azure:${{ github.run_number }}'
 
   # deploy:
   #   runs-on: ubuntu-latest

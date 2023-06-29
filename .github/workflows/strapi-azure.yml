@@ -27,7 +27,7 @@ jobs:
       with:
         context: .
         # push: true
-        tags: 'allsampledockerimages.azurecr.io/${{ env.REGISTRY_USERNAME }}/strapi-distorless-azure:${{ github.run_number }}'
+        tags: 'allsampledockerimages.azurecr.io/${{ secrets.REGISTRY_USERNAME }}/strapi-distorless-azure:${{ github.run_number }}'
 
   # deploy:
   #   runs-on: ubuntu-latest

@@ -26,8 +26,8 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        push: true
-        tags: 'allsampledockerimages.azurecr.io/allsampledockerimages/strapi-distorless-azure:${{ github.run_number }}'
+        # push: true
+        tags: 'allsampledockerimages.azurecr.io/${{ env.REGISTRY_USERNAME }}/strapi-distorless-azure:${{ github.run_number }}'
 
   # deploy:
   #   runs-on: ubuntu-latest

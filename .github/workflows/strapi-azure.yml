@@ -27,7 +27,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ env.REGISTRY_SOURCE }}/${{ env.REGISTRY_USERNAME }}/${{ env.REGISTRY_IMAGE }}:${{ github.run_number }}, ${{ env.REGISTRY_SOURCE }}/${{ env.REGISTRY_USERNAME }}/${{ env.REGISTRY_IMAGE }}:latest
+        tags: allsampledockerimages.azurecr.io/${{ env.REGISTRY_USERNAME }}/${{ env.REGISTRY_IMAGE }}:${{ github.run_number }}
 
   deploy:
     runs-on: ubuntu-latest
